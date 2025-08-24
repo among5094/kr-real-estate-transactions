@@ -22,13 +22,13 @@ datelist <- format(datelist, format='%Y%m') # 형식변환(YYYY-MM-DD => YYYYMM)
 datelist[1:3] # 확인
 
 # 4) 디코딩된 서비스키 입력
-service_key <- "ctblSVIlq4G8POwFjJsKfIV/0lzVCruQ2CW0SRmSkIQhKVJGlhMoUhhMAqwWNwPnB/hJhfVubvDudXMil10tpg==" 
+service_key <- ***blanks***
   
 #아래는 인코딩
-  #"ctblSVIlq4G8POwFjJsKfIV%2F0lzVCruQ2CW0SRmSkIQhKVJGlhMoUhhMAqwWNwPnB%2FhJhfVubvDudXMil10tpg%3D%3D"
+  #"***blanks***"
 
 # 최신 엔드포인트 (HTTPS, 443)
-base_url <- "https://apis.data.go.kr/1613000/RTMSDataSvcAptTrade/getRTMSDataSvcAptTrade" # 새로 추가!
+base_url <- "***blanks***e" # 새로 추가!
 
 # 03-2 요청 목록 생성: 자료 요청 방법
 
@@ -132,7 +132,7 @@ library(stringr)
 dir.create("02_raw_data", showWarnings = FALSE)
 
 for (i in seq_along(url_list)) {
-  u <- as.character(url_list[[i]])   # ★ 리스트에서 URL 문자열 추출 (반드시 [[i]])
+  u <- as.character(url_list[[i]])   # 리스트에서 URL 문자열 추출 (반드시 [[i]])
   
   # 1) HTTP 요청
   resp <- tryCatch(GET(u), error = function(e) NULL)
@@ -246,6 +246,7 @@ install.packages("plyr")
 library(plyr)
 apt_price <- ldply(as.list(paste0("./02_raw_data/", files)), read.csv) # 결합
 tail(apt_price, 2)# 확인
+
 
 
 
