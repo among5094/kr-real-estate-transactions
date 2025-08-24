@@ -22,7 +22,7 @@ datelist <- format(datelist, format='%Y%m') # 형식변환(YYYY-MM-DD => YYYYMM)
 datelist[1:3] # 확인
 
 # 4) 인증키 입력
-service_key <- "https://apis.data.go.kr/1613000/RTMSDataSvcAptTrade/getRTMSDataSvcAptTrade"
+service_key <- ***blank***
 
 # 03-2 요청 목록 생성: 자료 요청 방법
 
@@ -123,3 +123,4 @@ files <- dir("./02_raw_data") # 폴더 내 모든 파일명 읽기
 install.packages("plyr")
 library(plyr)
 apt_price <- ldply(as.list(paste0("./02_raw_data/", files)), read.csv) # 결합
+
