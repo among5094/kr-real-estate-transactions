@@ -36,7 +36,7 @@ for ( i in 1:nrow(loc)){ # 외부 반복: 25개 자치구
     cnt <- cnt+1 # 반복 누적 세기
     
     #---# 요청 목록 채우기(25x12 = 300)
-    url_list[cnt] <- paste0("http://openapi.molit.go.kr:8081/OpenAPI_ToolInstallPackage/service/rest/RTMSOBJSvc/getRTMSDataSvcAptTrade?",
+    url_list[cnt] <- paste0(" ***blank*** ",
                             "LAWD_CD=", loc[i,1], # 지역 코드
                             "&DEAL_YMD=", datelist[j], # 수집 월
                             "&numOfRows=", 100, # 한 페이지 결과 수
@@ -123,4 +123,5 @@ files <- dir("./02_raw_data") # 폴더 내 모든 파일명 읽기
 install.packages("plyr")
 library(plyr)
 apt_price <- ldply(as.list(paste0("./02_raw_data/", files)), read.csv) # 결합
+
 
